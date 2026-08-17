@@ -109,7 +109,7 @@ const csrfProtect = createCsrfProtect({
         sameSite: "lax",
     },
     token: {
-        value: async (req) => {
+        value: async (req: NextRequest) => {
             const queryCsrf = req.url.match(/_csrf=(.[^&]*)/)?.[1];
 
             return queryCsrf
